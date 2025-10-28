@@ -154,6 +154,19 @@ p {
 	animation: fadeOut 200ms ease;
 }
 
+.Footer {
+	text-align: left;
+	padding: 8px 10vw;
+	outline: none;
+	user-select: none;
+	font-weight: 500;
+	line-height: 1;
+	border-radius: 4px;
+	font-size: 15px;
+	color: #123114;
+  font-family: 'League Spartan';
+}
+
 .NavigationMenuViewport {
 	position: relative;
 	transform-origin: top center;
