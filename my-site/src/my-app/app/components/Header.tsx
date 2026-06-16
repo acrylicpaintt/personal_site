@@ -1,7 +1,7 @@
 
 import { NavigationMenu } from "radix-ui";
 import { Flex, Theme } from '@radix-ui/themes';
-import "./globals.css";
+import "../globals.css";
 
 
 const Header = () => {
@@ -13,16 +13,16 @@ const Header = () => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
 						className="NavigationMenuLink"
-						href="http://localhost:3000"
+						href="/"
 					>
-						Who Am I?
+						Home
 					</NavigationMenu.Link>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
           <NavigationMenu.Link
 						className="NavigationMenuLink"
-						href="http://localhost:3000/"
+						href="/projects"
 					>
 						Projects
 					</NavigationMenu.Link>
@@ -31,7 +31,7 @@ const Header = () => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
 						className="NavigationMenuLink"
-						href="http://localhost:3000/"
+						href="/funfacts"
 					>
 						Fun Facts
 					</NavigationMenu.Link>
@@ -40,7 +40,7 @@ const Header = () => {
           <NavigationMenu.Item>
           <NavigationMenu.Link
 						className="HeaderButton"
-						href="http://localhost:3000/"
+						href="/contactme"
 					>
 						Contact Me!
 					</NavigationMenu.Link>

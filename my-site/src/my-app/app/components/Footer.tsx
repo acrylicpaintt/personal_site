@@ -1,13 +1,13 @@
 
 import { NavigationMenu } from "radix-ui";
 import { Flex, Theme } from '@radix-ui/themes';
-import "./globals.css";
+import "../globals.css";
 
 
 
 const Footer = () => {
    return (
-    <Flex direction="column" gap="2">
+    <footer>
         <Theme>
             <NavigationMenu.Root className="NavigationMenuRoot" orientation="vertical">
                 <NavigationMenu.List className="NavigationMenuList">
@@ -19,7 +19,7 @@ const Footer = () => {
             </NavigationMenu.Root>
             
         </Theme>
-    </Flex>
+    </footer>
     );
 }
 

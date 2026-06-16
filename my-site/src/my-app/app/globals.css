@@ -243,3 +243,11 @@ p {
 	line-height: 1.4;
 	font-weight: initial;
 }
+
+.h1 {
+	size: 20px;
+}
+
+.h2 {
+	size: 10px;
+}
