@@ -1,10 +1,5 @@
 
 @import "tailwindcss";
-@import "@radix-ui/colors/black-alpha.css";
-@import "@radix-ui/colors/indigo.css";
-@import "@radix-ui/colors/mauve.css";
-@import "@radix-ui/colors/purple.css";
-@import "@radix-ui/colors/violet.css";
 
 :root {
   --background: #FEFAE1;
@@ -74,7 +69,6 @@ p {
 	background-color: #618753;
 }
 
-
 .NavigationMenuTrigger,
 .NavigationMenuLink {
 	padding: 8px 10vw;
@@ -91,7 +85,6 @@ p {
 .NavigationMenuLink:focus {
 	box-shadow: 0 0 0 2px var(--violet-7);
 }
-
 
 .NavigationMenuTrigger {
 	display: flex;
@@ -145,7 +138,6 @@ p {
 		width,
 		transform 250ms ease;
 }
-
 
 .NavigationMenuIndicator[data-state="visible"] {
 	animation: fadeIn 200ms ease;
@@ -244,10 +236,10 @@ p {
 	font-weight: initial;
 }
 
-.h1 {
-	size: 20px;
+h1 {
+  font-size: 20px;
 }
 
-.h2 {
-	size: 10px;
+h2 {
+  font-size: 15px;
 }
