@@ -1,0 +1,20 @@
+[
+  {
+    "id": "matcha",
+    "background": "#c1d494",
+    "button": "#749f64",
+    "text": "#000000"
+  },
+  {
+    "id": "day",
+    "background": "#ffffff",
+    "button": "#24A0ED",
+    "text": "#000000"
+  }, 
+  {
+    "id": "night",
+    "background": "#0D1626",
+    "button": "#305be3",
+    "text": "#E5EBFB"
+  }
+]

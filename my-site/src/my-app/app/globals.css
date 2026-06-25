@@ -21,7 +21,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--color-background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -43,7 +43,7 @@ p {
 .NavigationMenuList {
 	display: flex;
 	justify-content: center;
-	background-color: #c1d494;
+	background-color: var(--color-background);
 	padding: 20px;
   width: 100vw;
 	border-radius: 6px;
@@ -52,9 +52,13 @@ p {
 	margin: 0;
 }
 
+.Header{
+	background-color: #dddddd;
+	box-shadow: 0 0 0 2px var(--color-text);
+}
 .HeaderButton {
-  background-color: #749f64;
-  color: #123114;
+  background-color: var(--color-button);
+  color: var(--color-text);
   font-weight: bold;
   padding: 8px 5vw;
 	outline: none;
@@ -66,19 +70,23 @@ p {
   font-family: 'League Spartan';
 }
 .HeaderButton:hover {
-	background-color: #618753;
+filter: brightness(0.8);
+}
+
+.theme-picker { 
+	color: var(--color-text);
 }
 
 .NavigationMenuTrigger,
 .NavigationMenuLink {
 	padding: 8px 10vw;
+	color: var(--color-text);
 	outline: none;
 	user-select: none;
 	font-weight: 500;
 	line-height: 1;
 	border-radius: 4px;
 	font-size: 15px;
-	color: #123114;
   font-family: 'League Spartan';
 }
 .NavigationMenuTrigger:focus,
@@ -137,13 +145,6 @@ p {
 	transition:
 		width,
 		transform 250ms ease;
-}
-
-.NavigationMenuIndicator[data-state="visible"] {
-	animation: fadeIn 200ms ease;
-}
-.NavigationMenuIndicator[data-state="hidden"] {
-	animation: fadeOut 200ms ease;
 }
 
 .Footer {
@@ -238,8 +239,14 @@ p {
 
 h1 {
   font-size: 20px;
+  color: var(--color-text);
 }
 
 h2 {
   font-size: 15px;
+  color: var(--color-text);
+}
+
+Image {
+	padding: 30px;
 }

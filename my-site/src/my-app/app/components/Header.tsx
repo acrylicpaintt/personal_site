@@ -1,12 +1,37 @@
 
+"use client"
 import { NavigationMenu } from "radix-ui";
 import { Flex, Theme } from '@radix-ui/themes';
 import "../globals.css";
-
+import themes from "../community-themes.json";
+import { useState, useEffect } from 'react';
 
 const Header = () => {
+
+	const [theme, setTheme] = useState(themes[0]);
+
+	useEffect(() => {
+	const saved = localStorage.getItem('theme');
+	if (saved) setTheme(JSON.parse(saved));
+	}, []);
+
+	useEffect(() => {
+		const root = document.documentElement;
+		const body = document.body;
+		
+		root.style.setProperty('--color-background', theme.background);
+		root.style.setProperty('--color-button', theme.button);
+		root.style.setProperty('--color-text', theme.text);
+		
+		body.style.setProperty('--color-background', theme.background);
+		body.style.setProperty('--color-button', theme.button);
+		body.style.setProperty('--color-text', theme.text);
+
+		localStorage.setItem('theme', JSON.stringify(theme));
+	}, [theme]);
+
 	return (
-    <Flex direction="column" gap="2">
+    <Flex className="Header" direction="column" gap="2">
 		<Theme>
 		<NavigationMenu.Root className="NavigationMenuRoot" orientation="vertical">
 			<NavigationMenu.List className="NavigationMenuList">
@@ -15,7 +40,7 @@ const Header = () => {
 						className="NavigationMenuLink"
 						href="/"
 					>
-						Home
+						whoami?
 					</NavigationMenu.Link>
         </NavigationMenu.Item>
 
@@ -24,16 +49,16 @@ const Header = () => {
 						className="NavigationMenuLink"
 						href="/projects"
 					>
-						Projects
+						projects
 					</NavigationMenu.Link>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
           <NavigationMenu.Link
 						className="NavigationMenuLink"
-						href="/funfacts"
+						href="/favs"
 					>
-						Fun Facts
+						favs
 					</NavigationMenu.Link>
         </NavigationMenu.Item>
 
@@ -42,9 +67,18 @@ const Header = () => {
 						className="HeaderButton"
 						href="/contactme"
 					>
-						Contact Me!
+						contact me!
 					</NavigationMenu.Link>
         </NavigationMenu.Item>
+
+		<select 
+		className="theme-picker"
+		value={theme.id} 
+		onChange={e => setTheme(themes[e.target.selectedIndex])}>
+			{themes.map(t => (
+				<option key={t.id}>{t.id}</option>
+			))}
+			</select>
         
 			</NavigationMenu.List>
 

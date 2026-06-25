@@ -1,13 +1,13 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+"use client"
 import headshot from './headshot.jpeg';
 import headshot_2 from './headshot_2.jpeg';
 import Slideshow from "./components/Slideshow";
 import "./globals.css";
 
 export default function Home() {
+   
+
   return (
-    <html lang="en">
       <body>
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">
@@ -15,12 +15,14 @@ export default function Home() {
               <Slideshow images={[headshot, headshot_2]}></Slideshow>
             </div>
             <div>
-              <h1>Hi, my name is Alicia Yoon.</h1>
+              <h1>Hi, my name is Alicia Yoon / 윤채민.</h1>
+              <h2>I'm a Computer Science undergraduate at Brown University who is interested in Full-Stack development, 
+                Cybersecurity (RvB Competitions), and Visual Computing. 
+              </h2>
               <h2>Everything on this site is written by me, not AI.</h2>
             </div>
           </main>
         </div>
       </body>
-    </html>
   );
 }
