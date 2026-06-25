@@ -240,11 +240,13 @@ filter: brightness(0.8);
 h1 {
   font-size: 20px;
   color: var(--color-text);
+  padding-bottom: 20px;
 }
 
 h2 {
   font-size: 15px;
   color: var(--color-text);
+  padding-bottom: 10px;
 }
 
 Image {
