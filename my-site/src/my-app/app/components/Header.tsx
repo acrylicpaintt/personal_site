@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Cookies from 'js-cookie';
 
-
 const Header = () => {
 
 	const [theme, setTheme] = useState(themes[0]);
