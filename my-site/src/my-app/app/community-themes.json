@@ -1,32 +1,37 @@
 [
   {
-    "id": "day",
+    "id": "milk",
     "background": "#ffffff",
     "button": "#24A0ED",
-    "text": "#000000"
+    "text": "#000000",
+    "image": "/drinks/milk.png"
   }, 
   {
     "id": "matcha",
     "background": "#c1d494",
     "button": "#749f64",
-    "text": "#000000"
+    "text": "#000000",
+    "image": "/drinks/matcha.png"
   },
   {
-    "id": "night",
+    "id": "blueberry",
     "background": "#0D1626",
     "button": "#305be3",
-    "text": "#E5EBFB"
+    "text": "#E5EBFB",
+    "image": "/drinks/blueberry.png"
   }, 
   {
     "id": "strawberry",
     "background": "#FADADD",
     "button": "#D182AD",
-    "text": "#000000"
+    "text": "#000000",
+    "image": "/drinks/strawberry.png"
   },
   {
     "id": "latte",
     "background": "#ceb997",
     "button": "#b88958",
-    "text": "#000000"
+    "text": "#000000",
+    "image": "/drinks/latte.png"
   }
 ]

@@ -1,10 +1,8 @@
 
 "use client"
-import { NavigationMenu } from "radix-ui";
-import { Button, Flex, Theme } from '@radix-ui/themes';
 import "../globals.css";
 import themes from "../community-themes.json";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { FaLinkedinIn, FaEnvelope, FaGithub } from 'react-icons/fa';
@@ -12,6 +10,7 @@ import { FaLinkedinIn, FaEnvelope, FaGithub } from 'react-icons/fa';
 const Header = () => {
 
 	const [theme, setTheme] = useState(themes[0]);
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => {
 	const saved = Cookies.get('theme');
@@ -33,82 +32,49 @@ const Header = () => {
 		body.style.setProperty('--color-background', theme.background);
 		body.style.setProperty('--color-button', theme.button);
 		body.style.setProperty('--color-text', theme.text);
-
-		localStorage.setItem('theme', JSON.stringify(theme));
 	}, [theme]);
 
 	const pathname = usePathname();
 
+	const dropdownRef = useRef<HTMLDetailsElement>(null);
 
-	return (
-    <Flex className="Header" direction="column" gap="2">
-		<Theme>
-		<NavigationMenu.Root className="NavigationMenuRoot" orientation="vertical">
-			<NavigationMenu.List className="NavigationMenuList">
-				<NavigationMenu.Item>
-					<div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-						<a href="https://linkedin.com/in/alicia-chaemin-yoon/" target="_blank"><FaLinkedinIn size={24} /></a>
-						<a href="mailto:aliciacyoon@gmail.com" target="_blank" style={{ border: "2px solid black", borderRadius: "8px", padding: "4px" }}><FaEnvelope size={24} /></a>
-						<a href="https://github.com/aliciacyoon" target="_blank"><FaGithub size={24} /></a>
-					</div>
-				</NavigationMenu.Item>
-				<NavigationMenu.Item>
-					<NavigationMenu.Link
-						className="NavigationMenuLink"
-						href="/"
-						active={pathname === '/'}
-					>
-						whoami?
-					</NavigationMenu.Link>
-				</NavigationMenu.Item>
+  return (
+    <header className="header">
+      <div className="header-social">
+        <a href="https://linkedin.com/in/alicia-chaemin-yoon/" target="_blank"><FaLinkedinIn size={20} /></a>
+        <a href="mailto:aliciacyoon@gmail.com"><FaEnvelope size={20} /></a>
+        <a href="https://github.com/aliciacyoon" target="_blank"><FaGithub size={20} /></a>
+      </div>
 
-				<NavigationMenu.Item>
-				<NavigationMenu.Link
-						className="NavigationMenuLink"
-						href="/projects"
-						active={pathname === '/projects'}
-					>
-						projects
-					</NavigationMenu.Link>
-       			</NavigationMenu.Item>
+      <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
+        <a href="/" className={pathname === '/' ? 'active' : ''}>whoami?</a>
+        <a href="/projects" className={pathname === '/projects' ? 'active' : ''}>projects</a>
+        <a href="/art" className={pathname === '/art' ? 'active' : ''}>art</a>
+        <a href="/resume.pdf" target="_blank" className="resume-btn">resume</a>
+        <details className="drink-dropdown" ref={dropdownRef}>
+          <summary className="drink-summary">
+            <img src={theme.image} alt={theme.id} className="drink-selected" />
+          </summary>
+          <div className="drink-options">
+            {themes.map(t => (
+              <button
+                key={t.id}
+                className={`drink-btn ${theme.id === t.id ? 'active' : ''}`}
+                onClick={() => { setTheme(t); if (dropdownRef.current) dropdownRef.current.open = false; }}
+              >
+                <img src={t.image} alt={t.id} />
+              </button>
+            ))}
+          </div>
+        </details>
+      </nav>
 
-        		<NavigationMenu.Item>
-          			<NavigationMenu.Link
-						className="NavigationMenuLink"
-						href="/art"
-						active={pathname === '/art'}
-					>
-						art
-					</NavigationMenu.Link>
-        		</NavigationMenu.Item>
-
-				<NavigationMenu.Item>
-					<NavigationMenu.Link 
-						className="HeaderButton"
-						href="/resume.pdf"
-  						target="_blank"
-						active={pathname === "/resume.pdf"}
-						>
-					resume
-					</NavigationMenu.Link>
-				</NavigationMenu.Item>
-
-				<NavigationMenu.Item>
-					<select 
-						className="theme-picker"
-						value={theme.id} 
-						onChange={e => setTheme(themes[e.target.selectedIndex])}>
-						{themes.map(t => (
-							<option key={t.id}>{t.id}</option>
-						))}
-					</select>
-				</NavigationMenu.Item>
-        
-			</NavigationMenu.List>
-			<NavigationMenu.Viewport />
-		</NavigationMenu.Root>
-    </Theme></Flex>
-	);
+      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? '✕' : '☰'}
+      </button>
+    </header>
+  );
 };
 
 export default Header;
+	

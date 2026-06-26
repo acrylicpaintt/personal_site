@@ -100,7 +100,7 @@ export default function ProjectPage() {
                 <Project projName={"ODE's Final Paper"}
                     link = {"/budykosellerspaper.pdf" }
                     desc={"Bifurcation Theory and Climate Tipping in the Budyko–Sellers Energy Balance Climate Model."}
-                    skills={"ODE, Applied Math"}
+                    skills={"ODE, Applied Math, Python"}
                     image={odespaper}>
                 </Project>
                 <Project projName={"Human-Computer Interaction Project Proposal"}
