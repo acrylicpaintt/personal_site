@@ -1,7 +1,7 @@
 
 "use client"
 import { NavigationMenu } from "radix-ui";
-import { Flex, Theme } from '@radix-ui/themes';
+import { Button, Flex, Theme } from '@radix-ui/themes';
 import "../globals.css";
 import themes from "../community-themes.json";
 import { useState, useEffect } from 'react';
@@ -83,10 +83,14 @@ const Header = () => {
         		</NavigationMenu.Item>
 
 				<NavigationMenu.Item>
-					<button 
-						value='Resume'
-						onClick={() => window.open('/resume.pdf', '_blank')}>
-					</button>
+					<NavigationMenu.Link 
+						className="HeaderButton"
+						href="/resume.pdf"
+  						target="_blank"
+						active={pathname === "/resume.pdf"}
+						>
+					resume
+					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 
 				<NavigationMenu.Item>
