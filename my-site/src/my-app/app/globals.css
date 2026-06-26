@@ -289,9 +289,10 @@ Image {
 }
 
 .section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 20px;
 }
 
 .section-header hr {
@@ -300,3 +301,9 @@ Image {
   border-top: 3px solid var(--color-button);
   margin-bottom: 20px;
 }   
+
+.NavigationMenuLink[data-active] {
+  font-weight: bold;
+  color: var(--color-button);
+  border-bottom: 2px solid var(--color-button);
+}

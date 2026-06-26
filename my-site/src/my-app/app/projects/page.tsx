@@ -78,10 +78,10 @@ export default function ProjectPage() {
                     desc={"Design components and work alongside the Dev team to create website for Hack@Brown."}
                     skills={"Blender, Design"}>
                 </Project>
-                <Project projName={"check out the art tab!"}
+                <Project projName={"check out my portfolio!"}
                     link = {"/favs" }
                     desc={"First Cybersecurity Club at Brown."}
-                    skills={"CCDC Competition"}>
+                    skills={"Acrylic Paint"}>
                 </Project>
             </div>
         </div>
