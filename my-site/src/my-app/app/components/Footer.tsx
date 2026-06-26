@@ -1,9 +1,7 @@
 
 import { NavigationMenu } from "radix-ui";
-import { Flex, Theme } from '@radix-ui/themes';
+import { Theme } from '@radix-ui/themes';
 import "../globals.css";
-
-
 
 const Footer = () => {
    return (

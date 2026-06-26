@@ -27,11 +27,11 @@ function Slideshow ({ images }: { images: StaticImageData[] }) {
    
     return(
         <div id="slideshow-container" style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-            <span onClick={handleBackClick} style={{fontSize: 50, cursor: 'pointer'}}>&lt;</span>
+            <span className="slideshow-arrows" onClick={handleBackClick} style={{fontSize: 50, cursor: 'pointer'}}>&lt;</span>
             <div id="slideshow-image">
                 <Image style={{width: 300}} src={images[nextIndex]} alt="Images"/>
             </div>           
-            <span onClick={handleForwardClick} style={{fontSize: 50, cursor: 'pointer'}}>&gt;</span>
+            <span className="slideshow-arrows" onClick={handleForwardClick} style={{fontSize: 50, cursor: 'pointer'}}>&gt;</span>
         </div>
     )
 }
