@@ -12,9 +12,11 @@ interface ProjectProps {
 
 function Project({ projName, link, desc, skills, image}: ProjectProps) {
     return (
+
         <a href={link} target="_blank" className="project-card">
+            <div style={{ overflowY: "auto", maxHeight: "370px" }}>
             <Image style={{width: 300}} src={image} alt="Images"/>
-            <div style={{ overflowY: "auto", maxHeight: "200px" }}>
+            
                 <h1 style={{ fontWeight: 'bold' }}>{projName}</h1>
                 <h2>{desc}</h2>
                 <h2 style={{ color: "gray" }}>{skills}</h2>
