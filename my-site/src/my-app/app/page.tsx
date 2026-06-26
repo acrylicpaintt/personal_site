@@ -13,7 +13,7 @@ export default function Home() {
                   style={{ display: "flex", alignItems: "center", gap: "30px", maxWidth: "80%", margin: "0 auto", padding: "30px" }}>
               <div style={{ flexShrink: 0 }}>
                 <Slideshow images={[headshot, headshot_2]} />
-                <a style={{textAlign: "center", marginTop: "8px"}}>me!</a>
+                <h2 style={{textAlign: "center", marginTop: "8px"}}>me!</h2>
               </div>
               <div style= {{paddingTop: '60px'}}>
                 <h1>Hi! My name is Alicia Yoon / 윤채민.</h1>
