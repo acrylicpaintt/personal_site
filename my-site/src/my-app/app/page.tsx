@@ -58,7 +58,7 @@ export default function Home() {
                 <hr />
               </div>
                 <h2 style = {{color: "gray"}}>Some of my favorite books across many categories: </h2>
-                <ul>
+                <ul className= "list">
                   <li>i who have never known men</li>
                   <li>Recoding America</li>
                   <li>The Bell Jar</li>
@@ -66,15 +66,14 @@ export default function Home() {
                   <li>Strange Houses</li>
                 </ul>
             <div className="section-header">
-                <h1>Music Favorites</h1>
+                <h1>Recent Media Favorites</h1>
                 <hr />
               </div>
-                <ul>
+                <ul className= "list">
                   <li>Hamilton</li>
                   <li>Hadestown</li>
-                  <li>Dominic Fike</li>
-                  <li>Taylor Swift</li>
-                  <li>Remi Wolf</li>
+                  <li>Obsession</li>
+                  <li>Gilmore Girls</li>
                 </ul>
             </div>
           </main>

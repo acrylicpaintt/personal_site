@@ -7,6 +7,7 @@ import themes from "../community-themes.json";
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Cookies from 'js-cookie';
+import { FaLinkedinIn, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 const Header = () => {
 
@@ -38,61 +39,66 @@ const Header = () => {
 
 	const pathname = usePathname();
 
+
 	return (
     <Flex className="Header" direction="column" gap="2">
 		<Theme>
 		<NavigationMenu.Root className="NavigationMenuRoot" orientation="vertical">
 			<NavigationMenu.List className="NavigationMenuList">
-        <NavigationMenu.Item>
-          <NavigationMenu.Link
+				<NavigationMenu.Item>
+					<div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+						<a href="https://linkedin.com/in/alicia-chaemin-yoon/" target="_blank"><FaLinkedinIn size={24} /></a>
+						<a href="mailto:aliciacyoon@gmail.com" target="_blank" style={{ border: "2px solid black", borderRadius: "8px", padding: "4px" }}><FaEnvelope size={24} /></a>
+						<a href="https://github.com/aliciacyoon" target="_blank"><FaGithub size={24} /></a>
+					</div>
+				</NavigationMenu.Item>
+				<NavigationMenu.Item>
+					<NavigationMenu.Link
 						className="NavigationMenuLink"
 						href="/"
 						active={pathname === '/'}
 					>
 						whoami?
 					</NavigationMenu.Link>
-        </NavigationMenu.Item>
+				</NavigationMenu.Item>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Link
+				<NavigationMenu.Item>
+				<NavigationMenu.Link
 						className="NavigationMenuLink"
 						href="/projects"
 						active={pathname === '/projects'}
 					>
 						projects
 					</NavigationMenu.Link>
-        </NavigationMenu.Item>
+       			</NavigationMenu.Item>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Link
+        		<NavigationMenu.Item>
+          			<NavigationMenu.Link
 						className="NavigationMenuLink"
 						href="/art"
 						active={pathname === '/art'}
 					>
 						art
 					</NavigationMenu.Link>
-        </NavigationMenu.Item>
+        		</NavigationMenu.Item>
 
-          <NavigationMenu.Item>
-          <NavigationMenu.Link
-						className="HeaderButton"
-						href="/contactme"
-						active={pathname === '/contactme'}
-					>
-						contact me!
-					</NavigationMenu.Link>
-        </NavigationMenu.Item>
+				<NavigationMenu.Item>
+					<button 
+						value='Resume'
+						onClick={() => window.open('/resume.pdf', '_blank')}>
+					</button>
+				</NavigationMenu.Item>
 
-		<NavigationMenu.Item>
-			<select 
-				className="theme-picker"
-				value={theme.id} 
-				onChange={e => setTheme(themes[e.target.selectedIndex])}>
-				{themes.map(t => (
-					<option key={t.id}>{t.id}</option>
-				))}
-			</select>
-			</NavigationMenu.Item>
+				<NavigationMenu.Item>
+					<select 
+						className="theme-picker"
+						value={theme.id} 
+						onChange={e => setTheme(themes[e.target.selectedIndex])}>
+						{themes.map(t => (
+							<option key={t.id}>{t.id}</option>
+						))}
+					</select>
+				</NavigationMenu.Item>
         
 			</NavigationMenu.List>
 			<NavigationMenu.Viewport />

@@ -1,6 +1,7 @@
 "use client"
 import "../globals.css";
 import Project from "../components/Project";
+import perennial from "../project-images/perennial.jpg"
 
 export default function ArtPage() {
   return (
@@ -11,7 +12,8 @@ export default function ArtPage() {
                 <Project projName={"check out my portfolio!"}
                     link = {"/favs" }
                     desc={"Collection of Visual Arts, Digital Arts, and Animation by Alicia Yoon"}
-                    skills={"Design, Art, Creativity"}>
+                    skills={"Design, Art, Creativity"}
+                    image={perennial}>
                 </Project>
             </div>
             <div className="section-header">

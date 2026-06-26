@@ -324,3 +324,8 @@ Image {
     padding: 16px;
   }
 }
+
+.list {
+	color: var(--color-text);
+	padding-left: 8px;
+}
