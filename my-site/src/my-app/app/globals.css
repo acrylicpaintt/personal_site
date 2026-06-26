@@ -307,3 +307,20 @@ Image {
   color: var(--color-button);
   border-bottom: 2px solid var(--color-button);
 }
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    max-width: 95%;
+    padding: 16px;
+  }
+}

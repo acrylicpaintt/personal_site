@@ -9,7 +9,8 @@ export default function Home() {
       <body>
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">
-            <div style={{ display: "flex", alignItems: "center", gap: "30px", maxWidth: "80%", margin: "0 auto", padding: "30px" }}>
+            <div className="hero-section"
+                  style={{ display: "flex", alignItems: "center", gap: "30px", maxWidth: "80%", margin: "0 auto", padding: "30px" }}>
               <div style={{ flexShrink: 0 }}>
                 <Slideshow images={[headshot, headshot_2]} />
                 <a style={{textAlign: "center", marginTop: "8px"}}>me!</a>
