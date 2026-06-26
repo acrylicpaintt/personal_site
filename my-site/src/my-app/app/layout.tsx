@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import themes from "./community-themes.json";
 import { useState, useEffect } from 'react';
 import { Metadata } from "next";
+import Cookies from 'js-cookie';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,15 +23,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('id');
-    return saved ? JSON.parse(saved) : themes[0];
-  });
+  const [theme, setTheme] = useState(themes[0]);
 
-  useEffect(() => {
-    localStorage.setItem('id', JSON.stringify(theme));
-  }, [theme]);
+    useEffect(() => {
+      const saved = Cookies.get('id');
+      if (saved) setTheme(JSON.parse(saved));
+    }, []);
 
+    useEffect(() => {
+      Cookies.set('id', JSON.stringify(theme));
+    }, [theme]);
   return (
     <html lang="en">
       <body style={{
