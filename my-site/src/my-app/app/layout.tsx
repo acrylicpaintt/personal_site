@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import themes from "./community-themes.json";
 import { useState, useEffect } from 'react';
-import { Metadata } from "next";
 import Cookies from 'js-cookie';
 
 const geistSans = Geist({

@@ -66,10 +66,10 @@ const Header = () => {
         <NavigationMenu.Item>
           <NavigationMenu.Link
 						className="NavigationMenuLink"
-						href="/favs"
-						active={pathname === '/favs'}
+						href="/art"
+						active={pathname === '/art'}
 					>
-						favs
+						art
 					</NavigationMenu.Link>
         </NavigationMenu.Item>
 

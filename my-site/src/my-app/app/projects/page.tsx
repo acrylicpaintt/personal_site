@@ -23,8 +23,8 @@ export default function ProjectPage() {
                 </Project>
                 <Project projName={"Slackbot: summertime"}
                     link = {"https://github.com/acrylicpaintt/slack-bot" }
-                    desc={"Developed as part of the StarDance Hack Club challenge."}
-                    skills={"API Calls, JavaScript, Slack Bolt, Server-side hosting"}>
+                    desc={"SlackBot running 24/7, hosted on Nest. Developed as part of the StarDance Hack Club challenge."}
+                    skills={"Harry Potter API, Joke API, Cat Fact API, Node.JS, Slack Bolt"}>
                 </Project>
                 <Project projName={"Snake"}
                     link = {"https://github.com/acrylicpaintt/slack-bot" }
@@ -45,18 +45,13 @@ export default function ProjectPage() {
                     link = {"https://project-youth-japan.vercel.app/" }
                     desc={"Official website for BRYTE (Brown Refugee Youth Tutoring & Enrichment) - a student-run organization at Brown University dedicated to supporting refugee youth through academic tutoring and mentoring."}
                     skills={"Full Stack, Google Calendar API"}>
-                </Project>
-                <Project projName={"BrownDems"}
-                    link = {"https://project-youth-japan.vercel.app/" }
-                    desc={"Official website for BRYTE (Brown Refugee Youth Tutoring & Enrichment) - a student-run organization at Brown University dedicated to supporting refugee youth through academic tutoring and mentoring."}
-                    skills={"Design, JS"}>
-                </Project>
+                </Project>  
             </div>
-        <div className="section-header">
-            <h1>Cybersecurity</h1>
-            <hr />
-        </div>
-         <div className="projects-grid">
+            <div className="section-header">
+                <h1>Cybersecurity</h1>
+                <hr />
+            </div>
+            <div className="projects-grid">
                 <Project projName={"CyberPatriot National Finalist"}
                     link = {"https://www.afa.org/cyberpatriot-national-finalist-are-here/" }
                     desc={"The most prestigious national youth cyber education program in the United States from 2024."}
@@ -69,19 +64,19 @@ export default function ProjectPage() {
                 </Project>
             </div>
             <div className="section-header">
-                <h1>Art/Design</h1>
+                <h1>Design</h1>
                 <hr />
             </div>
             <div className="projects-grid">
                 <Project projName={"Hack@Brown 2027"}
-                    link = {"https://www.afa.org/cyberpatriot-national-finalist-are-here/" }
+                    link = {"https://hackatbrown.org" }
                     desc={"Design components and work alongside the Dev team to create website for Hack@Brown."}
                     skills={"Blender, Design"}>
                 </Project>
-                <Project projName={"check out my portfolio!"}
-                    link = {"/favs" }
-                    desc={"First Cybersecurity Club at Brown."}
-                    skills={"Acrylic Paint"}>
+                <Project projName={"BrownDems"}
+                    link = {"https://project-youth-japan.vercel.app/" }
+                    desc={"Official website for BRYTE (Brown Refugee Youth Tutoring & Enrichment) - a student-run organization at Brown University dedicated to supporting refugee youth through academic tutoring and mentoring."}
+                    skills={"Design, JS"}>
                 </Project>
             </div>
         </div>
